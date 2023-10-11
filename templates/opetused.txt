@@ -1,0 +1,35 @@
+https://startbootstrap.com/template/bare#google_vignette
+siit lae bootstrapi stiilid
+
+lisa kaust static
+
+ja copi seal olemas olevad kolm
+kataloogi static kataloogi
+
+index.html fail nimi muuda base.html ja kopi tempates kataloogi.
+ava settings fail movieproject rida 121 lisa juurde STATICFILES_DIRS = ["STATIC/"]
+
+urls.py tee
+
+from django.views.generic import RedirectView
+
+path("movieapp", include("movieapp.urls")),
+path("", RedirectView.as_view(url="movieapp"))
+
+
+movieapp alla lisa kataloog urls.py
+ja lisa read
+from django.urls import path
+from  . import views
+app_name = "movieapp"
+urlpatterns = [
+    path("", views.HomeView.as_view, name="index")
+]
+
+
+ et staatilised failid tööle hakkaks
+ lisa read base.html
+ rida 1 {% load static %}
+ rida 11 href="{% static "assets/favicon.ico" %}"
+ rida 13 href="{% static "css/styles.css" %}"
+ rida 49 <script src="{% static "js/scripts.js" %}"></script>
