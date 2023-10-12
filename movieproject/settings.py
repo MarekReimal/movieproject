@@ -123,3 +123,7 @@ STATICFILES_DIRS = ["STATIC/"]
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# OMDB API key
+OMDB_KEY = "78685d41"
+OMDB_URL = "http://www.omdbapi.com/?apikey=" + OMDB_KEY

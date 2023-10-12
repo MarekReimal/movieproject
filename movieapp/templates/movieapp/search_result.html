@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-8 mx-auto">
+            <h2>Search result</h2>
+            {% if object_list and choose_table == "country_valik" %}
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Common name</th>
+                            <th>Official name</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for country in object_list %} {# vt view sealt def kust tekivad andmed #}
+                            <tr>
+                                <td>{{ country.common }}</td>
+                                <td>{{ country.official }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            {% elif choose_table == "movie_valik" %}
+                  <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for movie in object_list %}
+                            <tr>
+                                <td>{{ movie.Title }}</td>
+                                <td>{{ movie.Year }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            {% else %}
+                <p>No result faound</p>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}
+

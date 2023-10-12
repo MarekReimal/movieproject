@@ -33,3 +33,16 @@ urlpatterns = [
  rida 11 href="{% static "assets/favicon.ico" %}"
  rida 13 href="{% static "css/styles.css" %}"
  rida 49 <script src="{% static "js/scripts.js" %}"></script>
+
+ VASTAVALT JUHENDILE TOIMETAN EDASI
+ teen html failid, 6tk, search leht on ühine riikidele ja filmidele
+ seal on if ja kahe päisega tabeli näitamine vastavalt kas riigid või filmid
+
+ kui tahad kasutada raamistiku vidinat kus html faili nime järgi prog saab aru mis kujuga põhja on vaja
+ siis kasuta N: mudelinimi_list või mudelinimi_detail faili nimesid html failide loomisel
+
+ Vormi kasutamie
+ vaja otsingu fraas ja kust otsitakse kas riigid või filmid
+ tee view
+ tee url
+ et vormilt info kätte saada get_queryset

@@ -4,5 +4,8 @@ from  . import views
 app_name = "movieapp"
 
 urlpatterns = [
-    path("", views.HomeView.as_view(), name="index")
+    path("", views.HomeView.as_view(), name="index"), # avaleht
+    path("search/", views.SearchView.as_view(), name="search"),
+    path("search_result/", views.SearchResultView.as_view(), name="search_result")
+
 ]

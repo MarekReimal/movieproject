@@ -20,7 +20,10 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("movieapp", include("movieapp.urls")),
-    path("", RedirectView.as_view(url="movieapp"))
+    path("movieapp/", include("movieapp.urls")), # rida ütleb et movieapp lingid on failis "movieapp.urls"
+    path("", RedirectView.as_view(url="movieapp")) # kui on http://127.0.0.1:8000 siis see rida
+                                                    # lisab "movieapp" ehk http://127.0.0.1:8000/movieapp/
+                                        # kui vaatad api urls.py, seal on avaleht "", mis tähendab et kui on
+                                # http://127.0.0.1:8000/movieapp/"siin on tühi", siis teab et vaja avada avaleht
 
 ]
