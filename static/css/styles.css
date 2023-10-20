@@ -104,6 +104,18 @@ body {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
+.image-frame{
+  border: 1px solid #4d5154; /* Replace #000 with the color you want */
+    /*padding: 10px; /* Optional: Add padding for spacing between the image and the border */
+    display: inline-block; /* Optional: Display the container as an inline block to fit the content */
+}
+
+tr.head_text {
+    background-color: #f2f2f2; /* Use the desired shade of gray */
+      font-weight: bold;
+    font-size: xx-large;
+}
+
 hr {
   margin: 1rem 0;
   color: inherit;

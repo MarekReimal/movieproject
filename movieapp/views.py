@@ -34,7 +34,7 @@ class SearchResultView(ListView):
             # otsingu fraas s& on võti API poolt määratud
             search = "s=" + value
             result = "&".join([settings.OMDB_URL, search]) # result sees on url ühes tükis
-            # print(result) # näita url konsoolis
+            print(result) # näita url konsoolis
             response = urlopen(result)
             data = json.loads(response.read()) # data sees on json obj
             if data["Response"] == "True":
@@ -58,4 +58,16 @@ class CountyListView(ListView):
     # päringud common alt sorteeritakse
     queryset = Country.objects.order_by("common")
     context_object_name = "countries"  # rida mis def muutuja et saaks for loobis kasut listi tähisena countries, muidu object_list oleks
+    paginate_by = 10  # mitu rida lehel kuvab
 
+class CountryDetailViev(DetailView):
+    model = Country
+
+class MovieListViev(ListView):
+    model = Movie
+    queryset = Movie.objects.order_by("title")
+    context_object_name = "movies"
+    paginate_by = 10
+
+class MovieDetailViev(DetailView):
+    model = Movie

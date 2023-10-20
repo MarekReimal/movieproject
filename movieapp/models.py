@@ -38,7 +38,7 @@ class Movie(models.Model):
     year = models.CharField(max_length=20)
     imdbid = models.CharField(max_length=30)
     type = models.CharField(max_length=20)
-    poster = models.CharField(max_length=150)
+    poster = models.CharField(max_length=150, null=True, blank=True)
 
     class Meta: # on Country alam klass
         ordering = ["title"]  # sorteerib tabeli lastname ja siis firstname järgi
