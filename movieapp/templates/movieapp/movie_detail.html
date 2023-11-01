@@ -28,7 +28,7 @@
                                     <th>Type</th>
                                     <td>{{ movie.type }}</td>
                                 </tr>
-                                {% if movie.poster and movie.poster != "NULL" %}
+                                {% if movie.poster and movie.poster != "N/A" %} {# kui postrit ei ole siis rida ei näita #}
                                 <tr>
                                     <th>Poster</th>
                                     <td><a href="{{ movie.poster }}" target="_blank">
